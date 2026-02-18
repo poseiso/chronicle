@@ -719,6 +719,20 @@ span.t-id          { display: none; }
 .lang-id span.t-en { display: none; }
 .lang-id span.t-id { display: inline; }
 
+/* MTL disclaimer — shown only in ID mode */
+.lang-id .chronicle-wrapper::before {
+  content: "Terjemahan Indonesia ini dibantu AI (MTL) dan mungkin tidak sempurna.";
+  display: block;
+  text-align: center;
+  font-family: var(--font-caps);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faded);
+  background: rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(140,100,50,0.25);
+  padding: 0.45rem 1rem;
+}
+
 /* === SITE FOOTER === */
 .site-footer {
   text-align: center;

@@ -10,9 +10,7 @@
     try { localStorage.setItem('lang', lang); } catch (e) {}
   }
 
-  var saved = 'en';
-  try { saved = localStorage.getItem('lang') || 'en'; } catch (e) {}
-  setLang(saved);
+  setLang('en');
 
   if (btn) {
     btn.addEventListener('click', function () {

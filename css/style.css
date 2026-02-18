@@ -107,16 +107,13 @@ nav.tabs a.active {
   overflow: hidden;
   background-color: var(--parchment-base);
   background-image:
-    /* Top and bottom edge darkening (replaces inset box-shadows) */
+    /* Top and bottom edge darkening */
     linear-gradient(to bottom, rgba(85, 50, 18, 0.14) 0%, transparent 7%),
     linear-gradient(to top,    rgba(85, 50, 18, 0.17) 0%, transparent 7%),
     /* Age spots and foxing */
     radial-gradient(ellipse at 11% 17%, rgba(140, 90, 40, 0.13) 0%, transparent 28%),
     radial-gradient(ellipse at 90% 75%, rgba(110, 70, 30, 0.09) 0%, transparent 26%),
     radial-gradient(ellipse at 55% 48%, rgba(160, 120, 60, 0.06) 0%, transparent 38%),
-    radial-gradient(ellipse at 22% 85%, rgba(180, 140, 80, 0.08) 0%, transparent 16%),
-    radial-gradient(ellipse at 78% 12%, rgba(130, 95, 50, 0.07) 0%, transparent 20%),
-    radial-gradient(ellipse at 40% 60%, rgba(150, 110, 55, 0.05) 0%, transparent 30%),
     /* Parchment tone */
     linear-gradient(
       163deg,
@@ -155,9 +152,10 @@ nav.tabs a.active {
   );
   /* Shadow follows the clip-path shape */
   filter:
-    drop-shadow(-8px 0 22px rgba(0, 0, 0, 0.78))
-    drop-shadow(8px 4px 14px rgba(0, 0, 0, 0.48))
-    drop-shadow(0 8px 18px rgba(0, 0, 0, 0.38));
+    drop-shadow(-6px 2px 20px rgba(0, 0, 0, 0.82))
+    drop-shadow(6px 6px 16px rgba(0, 0, 0, 0.42));
+  will-change: filter;
+  contain: layout style;
   padding: var(--page-pad);
   min-height: calc(100vh - 7rem);
 }
@@ -206,8 +204,9 @@ body::after {
     rgba(180, 100, 30, 0.04) 0%,
     transparent 65%
   );
-  animation: flicker 5s ease-in-out infinite;
+  animation: flicker 8s ease-in-out infinite;
   pointer-events: none;
+  will-change: opacity;
   z-index: 9999;
 }
 
@@ -701,16 +700,102 @@ hr.divider::after {
 }
 
 /* === RESPONSIVE === */
-@media (max-width: 680px) {
-  :root { --page-pad: 2.5rem 1.5rem; }
+@media (max-width: 720px) {
+  :root {
+    --page-pad: 2rem 1.5rem;
+  }
 
-  nav.tabs { padding-left: 0.5rem; }
-  nav.tabs a { padding: 0.38rem 0.7rem; font-size: 0.58rem; letter-spacing: 0.1em; }
+  body {
+    padding: 0 0 4rem;
+  }
 
+  /* Nav: stretch tabs to full width, tap-friendly targets */
+  nav.tabs {
+    padding-left: 0;
+    width: 100%;
+  }
+  nav.tabs a {
+    flex: 1;
+    text-align: center;
+    padding: 0.7rem 0.4rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+  nav.tabs a:first-child { border-radius: 0; }
+
+  /* Simpler shadow on mobile — big perf win */
+  .page {
+    filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.75));
+    min-height: 100svh;
+  }
+
+  /* Character grid: single column */
   .character-grid { grid-template-columns: 1fr; }
 
+  /* Illuminated box */
   .illuminated-box { padding: 1.5rem 1rem; }
 
-  .entry-excerpt { padding-left: 0; margin-top: 0.5rem; }
+  /* Smaller drop cap */
+  .entry-content .drop-cap::first-letter {
+    font-size: 3rem;
+    line-height: 0.8;
+  }
+
+  /* Entry footer: stack vertically */
+  .entry-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .entry-nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Log index */
+  .entry-excerpt { padding-left: 0; margin-top: 0.4rem; }
   .entry-top     { flex-direction: column; gap: 0.2rem; }
+
+  /* Landing page */
+  .landing-title { padding: 2rem 0 1.5rem; }
+  .nav-buttons   { flex-direction: column; align-items: center; gap: 0.85rem; }
+  .btn           { width: 100%; max-width: 260px; text-align: center; }
+
+  /* Party roster label: shrink to fit */
+  .party-roster::before {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+  .party-roster { padding: 1.5rem 1rem; }
+
+  /* Character meta on individual pages */
+  .char-header .char-meta {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    line-height: 1.6;
+  }
+
+  /* Entry dateline: allow wrap */
+  .entry-dateline {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 400px) {
+  :root { --page-pad: 1.75rem 1.1rem; }
+
+  nav.tabs a { font-size: 0.55rem; padding: 0.65rem 0.25rem; }
+
+  .char-section p  { font-size: 0.97rem; }
+  .entry-content p { font-size: 0.97rem; }
+
+  .entry-content .drop-cap::first-letter {
+    font-size: 2.6rem;
+  }
 }

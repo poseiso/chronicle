@@ -107,9 +107,9 @@ nav.tabs a.active {
   overflow: hidden;
   background-color: var(--parchment-base);
   background-image:
-    /* Top and bottom edge darkening */
-    linear-gradient(to bottom, rgba(85, 50, 18, 0.14) 0%, transparent 7%),
-    linear-gradient(to top,    rgba(85, 50, 18, 0.17) 0%, transparent 7%),
+    /* Top and bottom edge darkening — fixed px so long pages match short ones */
+    linear-gradient(to bottom, rgba(85, 50, 18, 0.14) 0px, transparent 100px),
+    linear-gradient(to top,    rgba(85, 50, 18, 0.17) 0px, transparent 100px),
     /* Age spots and foxing */
     radial-gradient(ellipse at 11% 17%, rgba(140, 90, 40, 0.13) 0%, transparent 28%),
     radial-gradient(ellipse at 90% 75%, rgba(110, 70, 30, 0.09) 0%, transparent 26%),
@@ -126,25 +126,25 @@ nav.tabs a.active {
     );
   /* Worn, non-rectangular edges */
   clip-path: polygon(
-    /* Top edge: left to right, slightly uneven */
-    0.3%  0.5%,
-    18%   0.1%,
-    40%   0.4%,
-    62%   0.05%,
-    82%   0.35%,
-    99.4% 0.15%,
+    /* Top edge: left to right — px so the irregularity is the same on any page height */
+    0.3%  8px,
+    18%   2px,
+    40%   6px,
+    62%   1px,
+    82%   5px,
+    99.4% 2px,
     /* Right edge: top to bottom */
     100%   8%,
     99.55% 32%,
     100%   56%,
     99.6%  80%,
-    99.75% 99.3%,
-    /* Bottom edge: right to left */
-    80%   99.95%,
-    58%   99.6%,
+    99.75% calc(100% - 10px),
+    /* Bottom edge: right to left — px anchored from the bottom */
+    80%   calc(100% - 1px),
+    58%   calc(100% - 6px),
     38%   100%,
-    18%   99.7%,
-    0.6%  99.8%,
+    18%   calc(100% - 5px),
+    0.6%  calc(100% - 3px),
     /* Left edge: bottom to top */
     0%    80%,
     0.45% 52%,

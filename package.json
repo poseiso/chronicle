@@ -1,0 +1,21 @@
+{
+  "name": "obamabg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@me.github.com:poseiso/chronicle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

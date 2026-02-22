@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <div class="chronicle-wrapper">
+
+    <nav class="tabs">
+      <a href="/" {% if navActive == "home" %}class="active"{% endif %}>
+        <span class="t-en">Home</span>
+        <span class="t-id">Beranda</span>
+      </a>
+      <a href="/characters/" {% if navActive == "characters" %}class="active"{% endif %}>
+        <span class="t-en">The Company</span>
+        <span class="t-id">Rombongan</span>
+      </a>
+      <a href="/log/" {% if navActive == "log" %}class="active"{% endif %}>
+        <span class="t-en">The Log</span>
+        <span class="t-id">Catatan</span>
+      </a>
+      <button class="lang-btn">EN · ID</button>
+    </nav>
+
+    {{ content | safe }}
+
+  </div>
+
+  <script src="/js/lang.js"></script>
+</body>
+</html>

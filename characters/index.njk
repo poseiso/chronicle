@@ -1,34 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Company: The Second Descent</title>
-  <meta name="description" content="The five members of the company documented, cross-referenced, and held accountable." />
-  <meta property="og:title" content="The Company: The Second Descent" />
-  <meta property="og:description" content="The five members of the company documented, cross-referenced, and held accountable." />
-  <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-  <div class="chronicle-wrapper">
-
-    <nav class="tabs">
-      <a href="index.html">
-        <span class="t-en">Home</span>
-        <span class="t-id">Beranda</span>
-      </a>
-      <a href="characters.html" class="active">
-        <span class="t-en">The Company</span>
-        <span class="t-id">Rombongan</span>
-      </a>
-      <a href="log.html">
-        <span class="t-en">The Log</span>
-        <span class="t-id">Catatan</span>
-      </a>
-      <button class="lang-btn">EN · ID</button>
-    </nav>
+---
+layout: layouts/base.njk
+title: "The Company: The Second Descent"
+description: "The five members of the company documented, cross-referenced, and held accountable."
+navActive: characters
+---
 
     <main class="page">
 
@@ -46,7 +21,7 @@
       <div class="character-grid">
 
         <!-- Nero XXI -->
-        <a href="character-nero.html" class="character-card">
+        <a href="/characters/nero/" class="character-card">
           <span class="char-sigil">🌙</span>
           <div class="char-name">Nero XXI</div>
           <div class="char-class">Half-Elf &nbsp;·&nbsp; Rogue / Monk &nbsp;·&nbsp; XXI of the Nero Line</div>
@@ -67,7 +42,7 @@
         </a>
 
         <!-- Sogong Wahyudi -->
-        <a href="character-sogong.html" class="character-card">
+        <a href="/characters/sogong/" class="character-card">
           <span class="char-sigil">☩</span>
           <div class="char-name">Sogong Wahyudi</div>
           <div class="char-class">Tiefling &nbsp;·&nbsp; Paladin (Oathbreaker) &nbsp;·&nbsp; Fisherman of the Styx</div>
@@ -86,7 +61,7 @@
         </a>
 
         <!-- Anaik -->
-        <a href="character-anaik.html" class="character-card">
+        <a href="/characters/anaik/" class="character-card">
           <span class="char-sigil">🛡</span>
           <div class="char-name">Anaik</div>
           <div class="char-class">Black Dragonborn &nbsp;·&nbsp; Fighter &nbsp;·&nbsp; Descendant of Birch</div>
@@ -107,7 +82,7 @@
         </a>
 
         <!-- Nanang -->
-        <a href="character-nanang.html" class="character-card">
+        <a href="/characters/nanang/" class="character-card">
           <span class="char-sigil">✦</span>
           <div class="char-name">Nanang</div>
           <div class="char-class">Human &nbsp;·&nbsp; Sorcerer</div>
@@ -128,7 +103,7 @@
         </a>
 
         <!-- Traxex -->
-        <a href="character-traxex.html" class="character-card">
+        <a href="/characters/traxex/" class="character-card">
           <span class="char-sigil">🏹</span>
           <div class="char-name">Traxex</div>
           <div class="char-class">Ranger</div>
@@ -151,16 +126,10 @@
       <span class="ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
 
       <div class="site-footer">
-        <a href="index.html">
+        <a href="/">
           <span class="t-en">← Return to the cover</span>
           <span class="t-id">← Kembali ke halaman muka</span>
         </a>
       </div>
 
     </main>
-
-  </div>
-
-  <script src="js/lang.js"></script>
-</body>
-</html>

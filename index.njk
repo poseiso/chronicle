@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Second Descent: Chronicles of Faerûn</title>
-  <meta name="description" content="A chronicle of five companions through Faerûn: Nero XXI, Sogong Wahyudi, Anaik, Nanang, and Traxex. Unequal to the task. Proceeding anyway." />
-  <meta property="og:title" content="The Second Descent: Chronicles of Faerûn" />
-  <meta property="og:description" content="A chronicle of five companions through Faerûn: Nero XXI, Sogong Wahyudi, Anaik, Nanang, and Traxex. Unequal to the task. Proceeding anyway." />
-  <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+---
+layout: layouts/base.njk
+title: "The Second Descent: Chronicles of Faerûn"
+description: "A chronicle of five companions through Faerûn: Nero XXI, Sogong Wahyudi, Anaik, Nanang, and Traxex. Unequal to the task. Proceeding anyway."
+navActive: home
+---
 
-  <div class="chronicle-wrapper">
-
-    <!-- Navigation Tabs -->
-    <nav class="tabs">
-      <a href="index.html" class="active">
-        <span class="t-en">Home</span>
-        <span class="t-id">Beranda</span>
-      </a>
-      <a href="characters.html">
-        <span class="t-en">The Company</span>
-        <span class="t-id">Rombongan</span>
-      </a>
-      <a href="log.html">
-        <span class="t-en">The Log</span>
-        <span class="t-id">Catatan</span>
-      </a>
-      <button class="lang-btn">EN · ID</button>
-    </nav>
-
-    <!-- Parchment Page -->
     <main class="page">
 
       <!-- Title -->
@@ -65,11 +38,11 @@
       </p>
 
       <div class="nav-buttons">
-        <a href="characters.html" class="btn">
+        <a href="/characters/" class="btn">
           <span class="t-en">Meet the Company</span>
           <span class="t-id">Kenali Rombongan</span>
         </a>
-        <a href="log.html" class="btn">
+        <a href="/log/" class="btn">
           <span class="t-en">Read the Log</span>
           <span class="t-id">Baca Catatan</span>
         </a>
@@ -80,11 +53,11 @@
       <!-- Party Roster Quick List -->
       <div class="party-roster">
         <ul>
-          <li><a href="character-nero.html">Nero XXI</a>, Half-Elf Rogue / Monk</li>
-          <li><a href="character-sogong.html">Sogong Wahyudi</a>, Tiefling Oathbreaker Paladin</li>
-          <li><a href="character-anaik.html">Anaik</a>, Black Dragonborn Fighter</li>
-          <li><a href="character-nanang.html">Nanang</a>, Human Sorcerer</li>
-          <li><a href="character-traxex.html">Traxex</a>, Ranger</li>
+          <li><a href="/characters/nero/">Nero XXI</a>, Half-Elf Rogue / Monk</li>
+          <li><a href="/characters/sogong/">Sogong Wahyudi</a>, Tiefling Oathbreaker Paladin</li>
+          <li><a href="/characters/anaik/">Anaik</a>, Black Dragonborn Fighter</li>
+          <li><a href="/characters/nanang/">Nanang</a>, Human Sorcerer</li>
+          <li><a href="/characters/traxex/">Traxex</a>, Ranger</li>
         </ul>
       </div>
 
@@ -96,9 +69,3 @@
       </div>
 
     </main>
-
-  </div>
-
-  <script src="js/lang.js"></script>
-</body>
-</html>
